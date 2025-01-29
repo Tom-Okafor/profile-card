@@ -55,6 +55,7 @@ main {
     -o-border-radius: 15px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 5px 8px #777;
 }
 
 
