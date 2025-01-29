@@ -51,7 +51,6 @@ main {
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     position: relative;
-    z-index: -2;
     overflow: hidden;
 }
 
@@ -70,22 +69,54 @@ main {
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     background-color: white;
+    z-index: 2;
 }
 
 
 
-.card-holder::after {
+.border::after {
     content: '';
     position: absolute;
     width: 30%;
     height: 300%;
-    background: var(--color4);
-    z-index: -1;
+    background: var(--color3);
     animation: spin 5s ease-in-out infinite;
     -webkit-animation: spin 5s linear infinite;
 }
 
-@media (prefers-reduced-motion : no-preference){
+.card-holder img {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 1);
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+}
+
+img:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+}
+
+.titles {
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.name {
+    margin-bottom: 5px;
+    color: var(--color3);
+}
+
+.title {
+    color: var(--color2);
+}
+
+@media (prefers-reduced-motion : no-preference) {
     @keyframes spin {
         to {
             transform: rotate(360deg);
@@ -93,7 +124,7 @@ main {
             -moz-transform: rotate(360deg);
             -ms-transform: rotate(360deg);
             -o-transform: rotate(360deg);
-}
+        }
     }
 }
 
