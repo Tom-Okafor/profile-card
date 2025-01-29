@@ -10,6 +10,7 @@ function setUTCTime() {
   const MINUTES = DATE.getUTCMinutes();
   let convertedHour;
   let dayPeriod;
+  let convertedMinutes;
   if (HOUR > 12) {
     convertedHour = HOUR - 12;
     dayPeriod = "PM";
@@ -17,7 +18,12 @@ function setUTCTime() {
     convertedHour = HOUR;
     dayPeriod = "AM";
   }
-  return `${convertedHour} : ${MINUTES} ${dayPeriod}`;
+  if (MINUTES < 10) {
+    convertedMinutes = `0${MINUTES}`;
+  } else {
+    convertedMinutes = MINUTES;
+  }
+  return `${convertedHour} : ${convertedMinutes} ${dayPeriod}`;
 }
 
 document.getElementById("time").innerText = setUTCTime();
