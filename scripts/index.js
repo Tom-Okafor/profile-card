@@ -29,4 +29,4 @@ function setUTCTime() {
 document.getElementById("time").innerText = setUTCTime();
 
 window.addEventListener("resize", caliberateCardHeight);
-caliberateCardHeight();
+window.addEventListener("load", caliberateCardHeight);

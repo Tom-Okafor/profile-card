@@ -42,7 +42,6 @@ main {
     place-content: center;
 }
 
-/* Styles for the profile card */
 .border {
     width: clamp(200px, 85vw, 500px);
     background-color: var(--color2);
